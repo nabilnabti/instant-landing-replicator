@@ -38,7 +38,11 @@ export const QrCodeBox = () => {
         </div>
       </div>
       <div className="text-lg font-bold text-white">Application</div>
-      <div className="text-sm text-gray-400">Download the application<br />and get a <span className="text-noda-gold font-medium">-10%</span> discount<br />on <span className="text-white">servicing</span> your cards!</div>
+      <div className="text-sm text-gray-400">
+        Download the application<br />
+        and get a <span className="text-noda-gold font-medium">-10%</span> discount<br />
+        on <span className="text-white font-medium">servicing</span> your <span className="text-white font-medium">cards</span>!
+      </div>
     </div>
   );
 };

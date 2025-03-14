@@ -2,23 +2,21 @@
 import React from 'react';
 
 export const UserAvatars = () => {
-  // Generate random colors for avatars
-  const colors = [
-    'bg-blue-500', 'bg-green-500', 'bg-yellow-500', 
-    'bg-red-500', 'bg-purple-500', 'bg-pink-500'
-  ];
-
+  // Les URLs vers des images de profil peuvent être remplacées par de vraies images
   return (
-    <div className="flex -space-x-2">
+    <div className="flex -space-x-3">
       {[...Array(6)].map((_, i) => (
         <div 
           key={i}
-          className={`${colors[i % colors.length]} w-8 h-8 rounded-full border-2 border-noda-dark flex items-center justify-center text-xs text-white font-bold`}
-        >
-          {String.fromCharCode(65 + i)}
-        </div>
+          className="w-10 h-10 rounded-full border-2 border-noda-dark overflow-hidden"
+          style={{ 
+            backgroundImage: `url(https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${i + 10}.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        />
       ))}
-      <div className="w-8 h-8 rounded-full bg-noda-card border-2 border-noda-dark flex items-center justify-center text-xs font-bold">
+      <div className="w-10 h-10 rounded-full bg-noda-dark border-2 border-noda-dark flex items-center justify-center text-xs font-bold">
         10k
       </div>
     </div>

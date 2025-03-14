@@ -48,7 +48,9 @@ const Index = () => {
                 New <span className="inline-block">g<CryptoBadges />als</span> 
                 <br />require new<br />
                 meth<span className="inline-block relative mx-1">
-                  <span className="inline-block w-8 h-4 bg-white/20 rounded-full"></span>
+                  <span className="inline-block w-8 h-4 bg-white/20 rounded-full relative">
+                    <span className="absolute left-1/4 top-0 bottom-0 w-1/2 bg-white rounded-full"></span>
+                  </span>
                 </span>ds <span className="text-yellow-500">⚡</span>
               </h1>
               
@@ -58,11 +60,11 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex items-center">
-              <button className="noda-button mr-4">
-                <ArrowRight className="w-4 h-4 mr-2" />
+            <div className="flex items-center mt-8">
+              <a href="#" className="noda-button mr-6 flex items-center bg-gradient-to-r from-yellow-500 to-amber-600 text-black rounded-full px-8 py-3">
+                <ArrowRight className="w-5 h-5 mr-2" />
                 Get Your Card
-              </button>
+              </a>
               <UserAvatars />
             </div>
           </div>
@@ -84,15 +86,15 @@ const Index = () => {
           <div className="hero-card flex items-center justify-center p-8">
             <div className="text-center">
               <div className="flex items-center justify-center mb-4">
-                <div className="relative w-20 h-20">
-                  <div className="absolute inset-0 bg-noda-gold rounded-md transform rotate-45"></div>
-                  <div className="absolute inset-[6px] bg-noda-card rounded-sm transform rotate-45"></div>
+                <div className="relative w-32 h-32">
+                  <div className="absolute inset-0 bg-noda-gold/90 rounded-xl transform rotate-0"></div>
+                  <div className="absolute inset-[8px] bg-noda-dark rounded-lg transform rotate-0"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-noda-gold text-4xl font-bold">N</span>
+                    <img src="/lovable-uploads/259c3d22-791c-4847-8f5f-d86e7517f129.png" alt="Noda Pay Logo" className="w-24 h-24 object-contain" />
                   </div>
                 </div>
               </div>
-              <h2 className="text-3xl font-bold text-white">Noda Pay</h2>
+              <h2 className="text-3xl font-bold text-white mt-4">Noda Pay</h2>
             </div>
           </div>
         </div>
