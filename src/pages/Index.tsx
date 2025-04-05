@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import HeaderLogo from '../components/HeaderLogo';
 import StarField from '../components/StarField';
 import CryptoBadges from '../components/CryptoBadges';
@@ -10,7 +10,7 @@ import PhoneDisplay from '../components/PhoneDisplay';
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-noda-dark text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#1e3a5f] text-white overflow-hidden">
       <StarField />
       
       {/* Main container */}
@@ -23,17 +23,17 @@ const Index = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-white/80 hover:text-white transition-colors">For Business</a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors">How it Works?</a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors">Blog</a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors">Features</a>
+            <a href="#" className="text-white/80 hover:text-white transition-colors">Pour Commerçants</a>
+            <a href="#" className="text-white/80 hover:text-white transition-colors">Comment ça marche ?</a>
+            <a href="#" className="text-white/80 hover:text-white transition-colors">Tarifs</a>
+            <a href="#" className="text-white/80 hover:text-white transition-colors">FAQ</a>
           </nav>
           
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-white hover:text-white/80 transition-colors underline">Sign Up</a>
-            <button className="bg-noda-dark border border-white/10 hover:bg-white/5 text-white px-4 py-2 rounded-full transition-colors flex items-center">
-              Get the App
-              <span className="ml-2 flex items-center justify-center w-5 h-5 bg-blue-500 rounded-full text-[10px]">+</span>
+            <a href="#" className="text-white hover:text-white/80 transition-colors underline">Connexion</a>
+            <button className="bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/15 text-white px-4 py-2 rounded-full transition-colors flex items-center">
+              Démo gratuite
+              <span className="ml-2 flex items-center justify-center w-5 h-5 bg-noda-gold rounded-full text-[10px] text-black">+</span>
             </button>
           </div>
         </header>
@@ -44,57 +44,83 @@ const Index = () => {
           {/* Left column - Hero text */}
           <div className="hero-card p-8 flex flex-col justify-between">
             <div>
-              <h1 className="text-6xl font-bold leading-tight mb-8">
-                New <span className="inline-block">g<CryptoBadges />als</span> 
-                <br />require new<br />
-                meth<span className="inline-block relative mx-1">
-                  <span className="inline-block w-8 h-4 bg-white/20 rounded-full relative">
-                    <span className="absolute left-1/4 top-0 bottom-0 w-1/2 bg-white rounded-full"></span>
-                  </span>
-                </span>ds <span className="text-yellow-500">⚡</span>
+              <h1 className="text-5xl font-bold leading-tight mb-8">
+                Acceptez les<br /> crypto-paiements,<br />
+                Recevez en <span className="text-noda-gold">€</span> !
               </h1>
               
-              <p className="text-gray-400 text-lg mb-8">
-                All your crypto-assets are at your fingertips and ready<br />
-                to be the means of payment in the simplest method!
+              <p className="text-gray-200 text-lg mb-8">
+                Terminal de paiement plug & play pour commerçants.<br />
+                Simple, sans compétence technique requise.
               </p>
+
+              {/* Key features with check marks */}
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <div className="mr-2 text-noda-gold"><Check size={20} /></div>
+                  <div>Paiement en crypto, règlement en euros sur votre compte bancaire</div>
+                </div>
+                <div className="flex items-center">
+                  <div className="mr-2 text-noda-gold"><Check size={20} /></div>
+                  <div>Aucun risque de volatilité - taux de conversion garantis</div>
+                </div>
+                <div className="flex items-center">
+                  <div className="mr-2 text-noda-gold"><Check size={20} /></div>
+                  <div>Terminal à usage unique: seulement 249€</div>
+                </div>
+              </div>
             </div>
             
-            <div className="flex items-center mt-8">
-              <a href="#" className="noda-button mr-6 flex items-center bg-gradient-to-r from-yellow-500 to-amber-600 text-black rounded-full px-8 py-3">
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+              <a href="#" className="noda-button w-full sm:w-auto flex items-center justify-center bg-noda-gold text-black rounded-full px-8 py-3">
                 <ArrowRight className="w-5 h-5 mr-2" />
-                Get Your Card
+                Obtenir votre Terminal
               </a>
-              <UserAvatars />
+              <div className="hidden sm:block">
+                <UserAvatars />
+              </div>
             </div>
           </div>
           
-          {/* Right column - Phone display */}
-          <div className="hero-card p-8 flex flex-col justify-center items-center">
+          {/* Right column - 3D Phone display */}
+          <div className="relative flex justify-center items-center p-4">
+            <div className="absolute -z-10 w-80 h-80 bg-noda-gold/20 rounded-full blur-3xl"></div>
             <PhoneDisplay />
           </div>
         </div>
         
         {/* Bottom section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {/* QR code section */}
-          <div className="hero-card p-8 flex flex-col justify-center items-start">
+          <div className="hero-card p-8 flex flex-col justify-center items-center md:items-start">
             <QrCodeBox />
           </div>
           
-          {/* Brand logo section */}
-          <div className="hero-card flex items-center justify-center p-8">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-4">
-                <div className="relative w-32 h-32">
-                  <div className="absolute inset-0 bg-noda-gold/90 rounded-xl transform rotate-0"></div>
-                  <div className="absolute inset-[8px] bg-noda-dark rounded-lg transform rotate-0"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img src="/lovable-uploads/259c3d22-791c-4847-8f5f-d86e7517f129.png" alt="Noda Pay Logo" className="w-24 h-24 object-contain" />
-                  </div>
-                </div>
+          {/* Brand message section */}
+          <div className="hero-card flex flex-col items-center justify-center p-8">
+            <div className="text-center md:text-left max-w-md">
+              <h2 className="text-3xl font-bold mb-4">Pourquoi choisir Noda Pay ?</h2>
+              <ul className="space-y-4 text-left">
+                <li className="flex items-start">
+                  <span className="text-noda-gold mr-2">✓</span>
+                  <span>Installation en moins de 5 minutes - aucune connaissance technique nécessaire</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-noda-gold mr-2">✓</span>
+                  <span>Augmentez votre clientèle avec les détenteurs de crypto-monnaies</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-noda-gold mr-2">✓</span>
+                  <span>Commissions réduites par rapport aux cartes bancaires traditionnelles</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-noda-gold mr-2">✓</span>
+                  <span>Service client disponible 24/7 pour vous accompagner</span>
+                </li>
+              </ul>
+              <div className="mt-8">
+                <CryptoBadges />
               </div>
-              <h2 className="text-3xl font-bold text-white mt-4">Noda Pay</h2>
             </div>
           </div>
         </div>
